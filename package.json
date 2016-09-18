@@ -1,0 +1,22 @@
+{
+  "name": "stefanoguglielmi",
+  "version": "1.0.0",
+  "description": "my website",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b4z81/stefanoguglielmi.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Stefano Guglielmi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b4z81/stefanoguglielmi/issues"
+  },
+  "homepage": "https://github.com/b4z81/stefanoguglielmi#readme"
+}
