@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/b4z81/stefanoguglielmi/issues"
   },
-  "homepage": "https://github.com/b4z81/stefanoguglielmi#readme"
+  "homepage": "https://github.com/b4z81/stefanoguglielmi#readme",
+  "dependencies": {
+    "blissfuljs": "^1.0.2"
+  }
 }
