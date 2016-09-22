@@ -20,6 +20,14 @@
   },
   "homepage": "https://github.com/b4z81/stefanoguglielmi#readme",
   "dependencies": {
-    "blissfuljs": "^1.0.2"
+    "blissfuljs": "^1.0.2",
+    "zepto-browserify": "^1.1.6-1"
+  },
+  "devDependencies": {
+    "gulp-browserify": "^0.5.1",
+    "gulp-uglify": "^2.0.0",
+    "pump": "^1.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

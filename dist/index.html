@@ -1,0 +1,163 @@
+<!doctype html>
+<!--[if IE 9 ]><html class="ie9" lang="de"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
+
+<head>
+
+<meta charset="utf-8">
+
+<title>HTML-StarterKit</title>
+
+<meta name="description" content="_______________INSERT_DECRIPTION_HERE_______________">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/milligram.min.css">
+<link rel="stylesheet" href="css/dish.css">
+<script src="js/scrollreveal.min.js"></script>
+<script>
+
+
+(function(){
+
+	var config = {
+		viewFactor : 0.20,
+		duration   : 1300,
+		distance   : "100px",
+		easing		 : 'ease'
+	};
+
+	window.sr = ScrollReveal( config );
+
+	if (sr.isSupported()) {
+		document.documentElement.classList.add('sr');
+	}
+})();
+
+
+</script>
+<style>
+
+	/* Ensure elements load hidden before ScrollReveal runs */
+	.sr .dish { visibility: hidden; }
+
+	/* add perspective to your container */
+		.table {
+			height: 200vh;
+			display: flex;
+		}
+		.col {flex-direction: column;display: flex;}
+		.col, .col .dish { flex: 1 0 0}
+		.col .dish {margin:2vw}
+		.column:nth-child(4) .block:nth-child(1) {
+		    -webkit-box-flex: 1.1;
+		    -o-box-flex: 1.1;
+		    box-flex: 1.1;
+		    -webkit-flex: 1.1;
+		    -ms-flex: 1.1;
+		    flex: 1.1;
+		}
+		.column:nth-child(3) .block:nth-child(1) {
+    -webkit-box-flex: 1.5;
+    -o-box-flex: 1.5;
+    box-flex: 1.5;
+    -webkit-flex: 1.5;
+    -ms-flex: 1.5;
+    flex: 1.5;
+}
+		.column:nth-child(3) .block:nth-child(2) {
+    -webkit-box-flex: 2;
+    -o-box-flex: 2;
+    box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+		}
+</style>
+</head>
+
+<body>
+	<nav class="navigation">
+		<section class="container">
+			<a class="navigation-title" href="https://milligram.github.io/">
+					<img class="img" src="https://milligram.github.io/img/logo.svg" height="30" alt="Milligram" title="Milligram">
+					<h1 class="title">Stefano Guglielmi</h1>
+				</a>
+		</section>
+	</nav>
+
+<div class="table">
+	    <div class="col">
+				<div class="dish">
+<div class="poached-egg"></div>
+				</div>
+				<div class="dish">
+
+				</div>
+				<div class="dish">
+
+				</div>
+			</div>
+			<div class="col">
+				<div class="dish">
+
+				</div>
+				<div class="dish">
+
+				</div>
+				<div class="dish">
+
+				</div>
+			</div>
+			<div class="col">
+				<div class="dish">
+
+				</div>
+				<div class="dish">
+
+				</div>
+				<div class="dish">
+
+				</div>
+			</div>
+			<div class="col">
+				<div class="dish">
+
+				</div>
+			</div>
+			<div class="col">
+				<div class="dish">
+
+				</div>				<div class="dish">
+
+								</div>
+
+			</div>
+			<div class="col">
+				<div class="dish">
+
+				</div>
+				<div class="dish">
+
+				</div>
+				<div class="dish">
+
+				</div>
+			</div>
+</div>
+
+
+
+</div>
+
+<!-- JavaScript -->
+<script src="js/app.js"></script>
+<!-- make reveal calls last -->
+    <script>
+      // use rotation in reveal configuration
+      sr.reveal('.table .dish', { reset: true });
+    </script>
+
+</body>
+
+</html>
