@@ -1,47 +1,18 @@
 
 
 .dish {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
   width: 300px;
   height: 300px;
-  background: #EFEFEF;
+  background: #ddd;
   border-radius: 50%;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 .dish:before {
   border-radius: 50%;
-  box-shadow: inset 0 5px 3px rgba(0, 0, 0, 0.1), inset 0 -2px 1px rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 5px 3px rgba(0, 0, 0, 0.3), inset 0 -2px 1px rgba(255, 255, 255, 0.9);
   position: relative;
   margin: 15% auto;
   width: 70%;
   height: 70%;
   background: #EEE;
-}
-.dish .poached-egg {
-  position: relative;
-  margin: -75% auto;
-  width: 50%;
-  height: 50%;
-  background: #FFF;
-  border-radius: 50%/30% 60%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
-}
-.dish .poached-egg:before {
-  border-radius: 40% 60%;
-  box-shadow: inset 0 -5px 15px rgba(255, 170, 0, 0.7), 0 2px 2px rgba(0, 0, 0, 0.1);
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjQzJSIgY3k9IjM4JSIgcj0iMzAlIj48c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjZmZlZTQ0IiBzdG9wLW9wYWNpdHk9IjAuNyIvPjxzdG9wIG9mZnNldD0iMzAlIiBzdG9wLWNvbG9yPSIjZmZkZDMzIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-  background-size: 100%;
-  background-image: -webkit-radial-gradient(43% 38%, circle, rgba(255, 238, 68, 0.7) 5%, #ffdd33 30%);
-  background-image: -webkit-radial-gradient(43% 38% circle, rgba(255, 238, 68, 0.7) 5%, #ffdd33 30%);
-  background-image: radial-gradient(circle at 43% 38%, rgba(255, 238, 68, 0.7) 5%, #ffdd33 30%);
-  position: relative;
-  top: 28%;
-  margin: auto;
-  width: 43%;
-  height: 40%;
 }
