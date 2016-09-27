@@ -4,7 +4,7 @@ var uglify = require('gulp-uglify');
 var pump = require('pump');
 
 gulp.task('script', function() {
-  gulp.src('./src/js/app.js')
+  gulp.src('./src/js/*.js')
     .pipe(browserify())
     .pipe(gulp.dest('./dist/js'));
 });
