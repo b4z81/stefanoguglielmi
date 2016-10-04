@@ -15,7 +15,7 @@ body {
   font-size: 1.6rem;
   font-family: sans-serif;
   color: #ffffff;
-  background: #001426 url("../img/bg-pattern.png");
+  background: #001426;
 }
 
 a {
@@ -59,23 +59,23 @@ Main Components
 }
 .cd-floating-background img:not(:first-child) {
   position: absolute;
-  top: 0;
+  bottom: 120px;
   left: 0;
 }
 .cd-floating-background img:first-child {
-  -webkit-transform: translateZ(550px);
-  -ms-transform: translateZ(550px);
-  transform: translateZ(10px);
+  -webkit-transform: translateZ(50px);
+  -ms-transform: translateZ(50px);
+  transform: translateZ(50px);
 }
 .cd-floating-background img:nth-child(2) {
-  -webkit-transform: translateZ(290px);
-  -ms-transform: translateZ(290px);
-  transform: translateZ(490px);
+  -webkit-transform: translateZ(590px);
+  -ms-transform: translateZ(590px);
+  transform: translateZ(590px);
 }
 .cd-floating-background img:nth-child(3) {
-  -webkit-transform: translateZ(400px);
-  -ms-transform: translateZ(400px);
-  transform: translateZ(500px);
+  -webkit-transform: translateZ(600px);
+  -ms-transform: translateZ(600px);
+  transform: translateZ(600px);
 }
 .no-preserve-3d .cd-floating-background {
   /* we target browsers that don't support preserve-3d and show just a standard image - no effect visible */
