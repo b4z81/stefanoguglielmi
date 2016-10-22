@@ -1,4 +1,8 @@
 var $ = require("jquery");
+require('browsernizr/test/css/preserve3d');
+var Choreographer = require('choreographer-js')
+// make sure to do this _after_ importing the tests
+require('browsernizr');
 
 $(document).ready(function(){
 	//define store some initial variables
@@ -83,6 +87,35 @@ $(document).ready(function(){
 		});
 	}
 });
+
+var vh = window.innerHeight;
+var wrapperNode = document.getElementById('content');
+var fin = wrapperNode.clientHeight - vh;
+
+function calculateAnimations() {
+  return [
+    { range: [-1, fin * 0.5],   selector: '.c1', type: 'scale', style: 'opacity', from: 1, to: 0.1 },
+    { range: [-1, fin * 0.5],   selector: '.c2', type: 'scale', style: 'opacity', from: 1, to: 0.1 },
+    { range: [-1, fin * 0.5],   selector: '.c3', type: 'scale', style: 'opacity', from: 1, to: 0.1 },
+    { range: [-1, fin * 0.5],   selector: '.c4', type: 'scale', style: 'opacity', from: 1, to: 0.1 },
+
+    { range: [fin * 0.5,fin],   selector: '.c5', type: 'scale', style: 'opacity', from: 0, to: 1 },
+    { range: [fin * 0.5,fin],   selector: '.c6', type: 'scale', style: 'opacity', from: 0, to: 1 },
+
+  ]
+}
+var choreographer = new Choreographer({
+  animations: calculateAnimations()
+})
+
+function animate() {
+  var scrollPosition = (wrapperNode.getBoundingClientRect().top - wrapperNode.offsetTop) * -1
+  choreographer.runAnimationsAt(scrollPosition)
+}
+
+document.body.addEventListener('scroll', animate)
+
+animate();
 
 /* 	Detect "transform-style: preserve-3d" support, or update csstransforms3d for IE10 ? #762
 	https://github.com/Modernizr/Modernizr/issues/762 */

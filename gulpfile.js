@@ -8,7 +8,9 @@ var browserify = require('browserify'),
     rename     = require('gulp-rename'),
     source     = require('vinyl-source-stream'),
     sourceMaps = require('gulp-sourcemaps'),
-    watchify   = require('watchify');
+    watchify   = require('watchify'),
+    watch = require("gulp-watch"),
+    browserSync = require('browser-sync').create();
 
 
 var config = {
@@ -40,3 +42,15 @@ gulp.task('bundle', function () {
 
     bundle(bundler);  // Chain other options -- sourcemaps, rename, etc.
 })
+
+gulp.task('server', function () {
+    browserSync.init({
+        injectChanges: true,
+        logLevel: "debug",
+    });
+
+    gulp.watch("src/scss/**/*.scss", ['sass']);
+    gulp.watch("Views/**/*.html").on('change', browserSync.reload);
+});
+
+gulp.task("develop", ["server"]);

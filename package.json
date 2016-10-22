@@ -21,6 +21,7 @@
   "homepage": "https://github.com/b4z81/stefanoguglielmi#readme",
   "dependencies": {
     "blissfuljs": "^1.0.2",
+    "choreographer-js": "^1.0.4",
     "zepto-browserify": "^1.1.6-1"
   },
   "devDependencies": {

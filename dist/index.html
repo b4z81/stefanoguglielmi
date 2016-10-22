@@ -1,28 +1,163 @@
 <!doctype html>
 <!--[if IE 9 ]><html class="ie9" lang="de"><![endif]-->
 <!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
-
 <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="description" content="Lazy load image with blurry effect as seen on Medium">
 
-<title>HTML-StarterKit</title>
+    <meta property="og:url" content="https://lourfield.github.io/element-queries/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Isometric Layout Demo - Web Design Tuts+" />
+    <meta property="og:description" content="An isometric grid layout with 3D transformations. Inspired from Envato Elements" />
+    <meta property="og:image" content="https://tfirdaus.github.io/inline-sharing-button/images/office-4.jpg" />
 
-<meta name="description" content="_______________INSERT_DECRIPTION_HERE_______________">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/milligram.min.css"></head>
-<link rel="stylesheet" href="css/style.css"></head>
-<script src="js/modernizr-custom.js"></script>
+    <title>Isometric Grid Layout</title>
+
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 <body>
-	<div class="cd-background-wrapper">
-		<figure class="cd-floating-background">
-			<img src="img/table.jpg" alt="image-1">
-			<img src="img/cd-img-2.png" alt="image-2">
-			<img src="img/cd-img-3.png" alt="image-3">
-		</figure>
+
+<div class="demo-content" id="content">
+	<div class="section section--featured">
+		<div class="hero">
+			<h1>Envato Elements</h1>
+			<h2>Opens up a world of creative possibilities for all your design projects.</h2>
+			<button ng-click="$ctrl.open()">{{age}}</button>
+		</div>
+		<div class="row">
+
+			<div class="column c1">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0" ></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/001.jpg" class="ItemsCard__image" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="column c2">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0" ></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/002.jpg" class="ItemsCard__image" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="column c3">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0" ></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/003.jpg" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="column c4">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0" ></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/004.jpg" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="column c5">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0" ></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/005.jpg" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="column c6">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0" ></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/006.jpg" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="column c7">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0" ></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/010.jpg" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="column c8">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0" ></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/008.jpg" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="column c9">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0"></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/003.jpg" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="column c10">
+				<div class="ItemCard">
+					<a class="ItemCard__dest cover" href="#0"></a>
+					<figure class="ItemCard__thumb">
+						<img src="./images/019.jpg" height="" width="" alt="">
+						<span class="shadow cover"></span>
+					</figure>
+				</div>
+			</div>
+
+		</div>
+
 	</div>
+</div>
+
+<div class="cd-quick-view">
+	<div class="cd-slider-wrapper">
+		<ul class="cd-slider">
+			<li class="selected"><img src="images/item-1.jpg" alt="Product 1"></li>
+			<li><img src="images/item-2.jpg" alt="Product 2"></li>
+			<li><img src="images/item-3.jpg" alt="Product 3"></li>
+		</ul> <!-- cd-slider -->
+
+		<ul class="cd-slider-navigation">
+			<li><a class="cd-next" href="#0">Prev</a></li>
+			<li><a class="cd-prev" href="#0">Next</a></li>
+		</ul> <!-- cd-slider-navigation -->
+	</div> <!-- cd-slider-wrapper -->
+
+	<div class="cd-item-info">
+		<h2>Produt Title</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, omnis illo iste ratione. Numquam eveniet quo, ullam itaque expedita impedit. Eveniet, asperiores amet iste repellendus similique reiciendis, maxime laborum praesentium.</p>
+
+		<ul class="cd-item-action">
+			<li><button class="add-to-cart">Add to cart</button></li>
+			<li><a href="#0">Learn more</a></li>
+		</ul> <!-- cd-item-action -->
+	</div> <!-- cd-item-info -->
+	<a href="#0" class="cd-close">Close</a>
+</div> <!-- cd-quick-view -->
+
+<div class="site-footer">
+stefanoguglielmi linkedin github dribble codepen twitter
+</div>
+
+<script src="js/app.js">
+
+</script>
 </body>
-<script src="js/app.js"></script>
 </html>
