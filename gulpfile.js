@@ -7,11 +7,12 @@ var browserify = require('browserify'),
     merge      = require('merge'),
     rename     = require('gulp-rename'),
     source     = require('vinyl-source-stream'),
-    sourceMaps = require('gulp-sourcemaps'),
+    sourcemaps = require('gulp-sourcemaps'),
     watchify   = require('watchify'),
     watch = require("gulp-watch"),
-    browserSync = require('browser-sync').create();
-
+    browserSync = require('browser-sync').create(),
+    autoprefixer = require("gulp-autoprefixer"),
+    sass = require("gulp-sass");
 
 var config = {
     js: {
@@ -46,11 +47,25 @@ gulp.task('bundle', function () {
 gulp.task('server', function () {
     browserSync.init({
         injectChanges: true,
-        logLevel: "debug",
+        logLevel: "debug"
+
+        /* set the index file */
     });
 
     gulp.watch("src/scss/**/*.scss", ['sass']);
     gulp.watch("Views/**/*.html").on('change', browserSync.reload);
+});
+
+gulp.task('sass', function(){
+    gulp.src('./src/scss/style.scss')
+        .pipe(sourcemaps.init({ loadMaps: false }))
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(autoprefixer('last 2 versions'))
+        //.pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./dist/css/'));
+
+    gulp.watch("src/scss/**/*.scss", ['sass']);
+
 });
 
 gulp.task("develop", ["server"]);
