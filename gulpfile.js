@@ -64,8 +64,6 @@ gulp.task('sass', function(){
         //.pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/css/'));
 
-    gulp.watch("src/scss/**/*.scss", ['sass']);
-
 });
 
 gulp.task("develop", ["server"]);

@@ -60,6 +60,7 @@ body {
   z-index: 100;
 }
 .row {
+  /*
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -67,16 +68,14 @@ body {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+          */
 }
 
 
 .section--featured {
 
 }
-.section--featured .row,
-.section--featured .column,
-.section--featured .ItemCard,
-.section--featured .ItemCard__thumb {
+.section--featured .row{
 
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -85,15 +84,17 @@ body {
 
 }
 .section--featured .row {
-  position: absolute;
-  /*top: -400px;
-  right: 60vh;
-  */
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+  height: 100vh;
 
-  width: 100%;
   -webkit-transform: rotateX(64deg) rotateZ(-43deg) rotateY(2deg) scale(1);
           transform: rotateX(64deg) rotateZ(-43deg) rotateY(2deg) scale(1);
 
+
+
+/*
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
@@ -103,6 +104,7 @@ body {
           left:0;
           height:100vh;
           overflow: hidden;
+          */
 }
 /*
 @media screen and (min-width: 720px) {
@@ -122,20 +124,6 @@ body {
   }
 }
 */
-.section--featured .column {
-  width: 50%;
-  max-width: 50%;
-  padding: 20px;
-
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 50%;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
-
-          height:50%;
-
-}
-
 .section--featured .shadow {
   display: block;
   -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -146,33 +134,56 @@ body {
   -webkit-animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) shadow 2;
           animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) shadow 2;
 }
-.section--featured .ItemCard__thumb img {
+.wrapper {
+    animation: wrapper 6s ease-in-out 1;
+}
+.page {
+  transform-style: preserve-3d;
+  animation: page 6s ease-in-out 1;
+}
+.section--featured .column {
+  position: absolute;
+
+    transform-style: preserve-3d;
+    transform-origin: 0 0 0;
+
+
+  &:nth-child(2) {
+            transform: translate3d(0, 0, -10px);
+  }
+  &:nth-child(3) {
+            transform: translate3d(0, 0, -20px);
+  }
+}
+@keyframes wrapper {
+  50% {
+    transform: translateZ(-10px) rotateX(60deg) rotateZ(29deg) rotateY(-180deg);
+  }
+}
+@keyframes page {
+  15% { transform: rotateY(-10deg); }
+  50% { transform: rotateY(-2deg); }
+  65% { transform: rotateY(10deg); }
+  100% { transform: rotateY(0deg); }
+}
+.section--featured .thumb img {
   position: relative;
   z-index: 1;
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -webkit-transform: translate3d(0, 0, 20px);
-          transform: translate3d(0, 0, 20px);
+
+/*
   -webkit-animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) levitate 2;
           animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) levitate 2;
-
+*/
   opacity: 0.9;
-  transition: 1s cubic-bezier(.5, .5, 0, 1);
-}
-.section--featured .column .ItemCard__thumb img {
-
-  &:nth-child(1) {
-    transform: translateY(15%);
-  }
 }
 
-.section--featured .column:hover .ItemCard__dest {
-  z-index: 10;
-}
 
 /* hover */
+/*
 .section--featured .column:hover .ItemCard__dest,
 .section--featured .column:hover .ItemCard__thumb img {
   -webkit-transform: translate3d(0, 0, 90px) rotateZ(11deg) rotateX(-94deg) rotateY(-34deg);
@@ -186,104 +197,6 @@ body {
   opacity: .3;
   background-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.1);
-}
-.section--list .row {
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 160px 0;
-}
-.section--list .column {
-  padding: 20px;
-}
-
-.cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  font-family: 'Roboto', sans-serif;
-  color: #fff;
-}
-@media screen and (min-width: 680px) {
-  .hero {
-    width: 80vw;
-
-  }
-}
-@media screen and (min-width: 840px) {
-  .hero {
-    width: 70vw;
-  }
-}
-@media screen and (min-width: 960px) {
-  .hero {
-    width: 60vw;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .hero {
-    width: 50vw;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .hero {
-    width: 40vw;
-  }
-}
-.hero h1 {
-  margin: 0;
-  font-size: 3em;
-  font-weight: 900;
-  color: #212a34;
-}
-.hero h2 {
-  font-size: 1.2em;
-  font-weight: 400;
-  opacity: .6;
-  color: #212a34;
-}
-.hero button {
-  margin-top: 40px;
-  padding: 20px 60px;
-  display: block;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  text-transform: uppercase;
-  color: #fff;
-  border: 0;
-  border-radius: 30px;
-  background-color: #ec3e3a;
-}
-
-@media screen and (min-width: 640px) {
-  .column {
-    width: 320px;
-    max-width: 50%;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 320px;
-        -ms-flex: 1 1 320px;
-            flex: 1 1 320px;
-  }
-}
-@media screen and (min-width: 940px) {
-  .column {
-    width: 313.33333333px;
-    max-width: 33.333%;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 313.33333333px;
-        -ms-flex: 1 1 313.33333333px;
-            flex: 1 1 313.33333333px;
-  }
 }
 
 .ItemCard {
@@ -334,6 +247,7 @@ body {
   text-transform: uppercase;
   color: #ec3e3a;
 }
+*/
 @-webkit-keyframes levitate {
   0% {
     -webkit-transform: translate3d(0, 0, 20px);
@@ -395,4 +309,64 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   }
+}
+
+.hero {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+@media screen and (min-width: 680px) {
+  .hero {
+    width: 80vw;
+
+  }
+}
+@media screen and (min-width: 840px) {
+  .hero {
+    width: 70vw;
+  }
+}
+@media screen and (min-width: 960px) {
+  .hero {
+    width: 60vw;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .hero {
+    width: 50vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    width: 40vw;
+  }
+}
+.hero h1 {
+  margin: 0;
+  font-size: 3em;
+  font-weight: 900;
+  color: #212a34;
+}
+.hero h2 {
+  font-size: 1.2em;
+  font-weight: 400;
+  opacity: .6;
+  color: #212a34;
+}
+.hero button {
+  margin-top: 40px;
+  padding: 20px 60px;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  border: 0;
+  border-radius: 30px;
+  background-color: #ec3e3a;
 }

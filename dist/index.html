@@ -29,106 +29,45 @@
 		</div>
 		<div class="row">
 
-			<div class="column c1">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0" ></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/001.jpg" class="ItemsCard__image" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
+			<div class="column" id="c1">
+				<figure class="thumb">
+					<img src="./images/001.jpg" class="thumb__image" height="" width="" alt="">
+					<span class="shadow"></span>
+				</figure>
 			</div>
-			<div class="column c2">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0" ></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/002.jpg" class="ItemsCard__image" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
+
+			<div class="column">
+				<figure class="thumb">
+					<img src="./images/002.jpg" class="thumb__image" height="" width="" alt="">
+					<span class="shadow"></span>
+				</figure>
 			</div>
-			<div class="column c3">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0" ></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/003.jpg" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
-			</div>
-			<div class="column c4">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0" ></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/004.jpg" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
-			</div>
-			<div class="column c5">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0" ></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/005.jpg" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
-			</div>
-			<div class="column c6">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0" ></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/006.jpg" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
-			</div>
-			<div class="column c7">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0" ></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/010.jpg" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
-			</div>
-			<div class="column c8">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0" ></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/008.jpg" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
-			</div>
-			<div class="column c9">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0"></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/003.jpg" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
-			</div>
-			<div class="column c10">
-				<div class="ItemCard">
-					<a class="ItemCard__dest cover" href="#0"></a>
-					<figure class="ItemCard__thumb">
-						<img src="./images/019.jpg" height="" width="" alt="">
-						<span class="shadow cover"></span>
-					</figure>
-				</div>
+
+			<div class="column">
+				<figure class="thumb">
+					<img src="./images/003.jpg" class="thumb__image" height="" width="" alt="">
+					<span class="shadow"></span>
+				</figure>
 			</div>
 
 		</div>
-
+		
 	</div>
 </div>
 
 
 
-<script src="js/app.js">
+<script src="js/app.js"></script>
+<script src="js/scroll.min.js"></script>
 
+<script>
+	// init controller
+	var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 100}});
+
+	// build scenes
+	new ScrollMagic.Scene({triggerElement: "#content"})
+					.setClassToggle("#c1", "wrapper") // add class toggle
+					.addTo(controller);
 </script>
 </body>
 </html>

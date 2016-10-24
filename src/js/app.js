@@ -87,7 +87,7 @@ $(document).ready(function(){
 		});
 	}
 });
-
+/* animation
 var vh = window.innerHeight;
 var wrapperNode = document.getElementById('content');
 var fin = wrapperNode.clientHeight - vh;
@@ -116,7 +116,7 @@ function animate() {
 document.body.addEventListener('scroll', animate)
 
 animate();
-
+*/
 /* 	Detect "transform-style: preserve-3d" support, or update csstransforms3d for IE10 ? #762
 	https://github.com/Modernizr/Modernizr/issues/762 */
 (function getPerspective(){
