@@ -1,8 +1,21 @@
 var $ = require("jquery");
-require('browsernizr/test/css/preserve3d');
-var Choreographer = require('choreographer-js')
-// make sure to do this _after_ importing the tests
-require('browsernizr');
+
+//require('browsernizr/test/css/preserve3d');
+//require('browsernizr');
+	$(function () {
+		var controller = new ScrollMagic.Controller();
+		var tween = TweenMax.staggerFromTo(".animate4", 2, {right: 0}, {right: 1000, ease: Back.easeOut}, 0.15);
+
+		// build scene
+		var scene = new ScrollMagic.Scene({
+			triggerElement: "#trigger4",
+			duration: 300,
+			offset: 0
+		})
+			.setTween(tween)
+			.addIndicators({name: "staggering"}) // add indicators (requires plugin)
+			.addTo(controller);
+	});
 
 $(document).ready(function(){
 	//define store some initial variables

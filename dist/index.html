@@ -19,8 +19,35 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<div class="scrollContent">
+	<div class="demo" style="overflow-x: hidden;">
 
-<div class="content" id="content">
+		<div class="spacer s4"></div>
+		
+		
+
+		<div id="trigger4" class="spacer s0"></div>
+		<div class="spacer s0"></div>
+
+		<div class="animate4 box2 ">
+			<img src="images/001.jpg">
+		</div>
+		<div class="animate4 box2 ">
+			<img src="images/002.jpg">
+		</div>
+		<div class="animate4 box2 ">
+			<img src="images/003.jpg">
+		</div>
+		<div class="animate4 box2  ">
+			<img src="images/004.jpg">
+		</div>
+		<div class="animate4 box2 ">
+			<img src="images/005.jpg">
+		</div>
+		<div class="spacer s1"></div>
+	</div>
+</div>
+<div class="content" id="content" style="display: none">
 	<div class="section section--featured">
 		<div class="hero">
 			<h1>Envato Elements</h1>
@@ -28,14 +55,13 @@
 			<button ng-click="$ctrl.open()">{{age}}</button>
 		</div>
 		<div class="row">
-
+<!--
 			<div class="column" id="c1">
 				<figure class="thumb">
 					<img src="./images/001.jpg" class="thumb__image" height="" width="" alt="">
 					<span class="shadow"></span>
 				</figure>
 			</div>
-
 			<div class="column">
 				<figure class="thumb">
 					<img src="./images/002.jpg" class="thumb__image" height="" width="" alt="">
@@ -48,26 +74,17 @@
 					<img src="./images/003.jpg" class="thumb__image" height="" width="" alt="">
 					<span class="shadow"></span>
 				</figure>
-			</div>
+			</div>-->
 
 		</div>
 		
 	</div>
 </div>
 
-
-
+<script src="js/vendor/TweenMax.min.js"></script>
+<script src="js/vendor/scrollmagic/ScrollMagic.min.js"></script>
+<script src="js/vendor/scrollmagic/plugins/animation.gsap.min.js"></script>
+<script src="js/vendor/scrollmagic/plugins/debug.addIndicators.min.js"></script>
 <script src="js/app.js"></script>
-<script src="js/scroll.min.js"></script>
-
-<script>
-	// init controller
-	var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 100}});
-
-	// build scenes
-	new ScrollMagic.Scene({triggerElement: "#content"})
-					.setClassToggle("#c1", "wrapper") // add class toggle
-					.addTo(controller);
-</script>
 </body>
 </html>

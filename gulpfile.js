@@ -12,6 +12,7 @@ var browserify = require('browserify'),
     watch = require("gulp-watch"),
     browserSync = require('browser-sync').create(),
     autoprefixer = require("gulp-autoprefixer"),
+    uglify = require("gulp-uglify"),
     sass = require("gulp-sass");
 
 var config = {
@@ -28,7 +29,8 @@ function bundle (bundler) {
     bundler
       .bundle()                                                        // Start bundle
       .pipe(source(config.js.src))                        // Entry point
-      .pipe(buffer())                                               // Convert to gulp pipeline
+      .pipe(buffer())      
+      .pipe(uglify())                                         // Convert to gulp pipeline
       .pipe(rename(config.js.outputFile))          // Rename output from 'main.js'
                                                                               //   to 'bundle.js'
     //  .pipe(sourceMaps.init({ loadMaps : true }))  // Strip inline source maps
@@ -52,8 +54,9 @@ gulp.task('server', function () {
         /* set the index file */
     });
 
-    gulp.watch("src/scss/**/*.scss", ['sass']);
-    gulp.watch("Views/**/*.html").on('change', browserSync.reload);
+    gulp.watch("src/scss/**/*.scss", ['sass']).on('change', browserSync.reload);
+    gulp.watch("src/js/app.js", ['bundle']).on('change', browserSync.reload);
+    gulp.watch("dist/**/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('sass', function(){
