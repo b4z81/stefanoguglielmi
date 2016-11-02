@@ -29,7 +29,7 @@ function bundle (bundler) {
     bundler
       .bundle()                                                        // Start bundle
       .pipe(source(config.js.src))                        // Entry point
-      .pipe(buffer())      
+      .pipe(buffer())
       .pipe(uglify())                                         // Convert to gulp pipeline
       .pipe(rename(config.js.outputFile))          // Rename output from 'main.js'
                                                                               //   to 'bundle.js'
@@ -46,23 +46,38 @@ gulp.task('bundle', function () {
     bundle(bundler);  // Chain other options -- sourcemaps, rename, etc.
 })
 
+gulp.task('scripts', function() {
+  gulp.src('src/js/**/*.js')
+    //  .pipe(buffer())
+    //  .pipe(sourcemaps.init({loadMaps: true}))
+          //.pipe(uglify())
+          .on('error', gutil.log)
+//      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('dist/js/'))
+});
+
 gulp.task('server', function () {
     browserSync.init({
         injectChanges: true,
-        logLevel: "debug"
+        logLevel: "debug",
+        server: "./dist/"
 
         /* set the index file */
     });
 
     gulp.watch("src/scss/**/*.scss", ['sass']).on('change', browserSync.reload);
-    gulp.watch("src/js/app.js", ['bundle']).on('change', browserSync.reload);
+    gulp.watch("src/js/**/*.js", ['scripts']).on('change', browserSync.reload);
     gulp.watch("dist/**/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('sass', function(){
     gulp.src('./src/scss/style.scss')
         .pipe(sourcemaps.init({ loadMaps: false }))
-        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(sass({
+          includePaths: require('bourbon').includePaths,
+          outputStyle: 'compressed' })
+        .on('error', sass.logError))
+        .on('error', gutil.log)
         .pipe(autoprefixer('last 2 versions'))
         //.pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/css/'));
