@@ -130,41 +130,15 @@ Main components
 	bottom: 0;
 	left: 0;
 */
-	background: rgba(#000, .1);
-	text-align: center;
-	@include font-smoothing;
-	color: $color-4;
-	opacity: 0;
-	visibility: hidden;
+	text-align: left;
 	@include transition(opacity .2s, background-color .2s);
-
-	.no-touch &:hover {
-		background: rgba(#000, .2);
-	}
-
-	@include MQ(L) {
-
-		visibility: visible;
-		opacity: 1;
-	}
-
-}
-
-@include MQ(XL) {
-	.no-touch .cd-item:hover .cd-trigger {
-		opacity: 1;
-	}
-
-	.touch .cd-item .cd-trigger {
-		opacity: 1;
-	}
 }
 
 .cd-quick-view {
 	/* quick view non available on small devices */
 	display: none;
 
-	@include MQ(L) {
+	@include MQ(S) {
 		display: block;
 		position: fixed;
 		max-width: 900px;

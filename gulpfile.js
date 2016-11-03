@@ -15,14 +15,16 @@ var browserify = require('browserify'),
     uglify = require("gulp-uglify"),
     sass = require("gulp-sass"),
     imagemin = require("gulp-imagemin");
-var config = {
-    js: {
-        src: './src/js/app.js',       // Entry point
-        outputDir: './dist/js/',  // Directory to save bundle to
-        mapDir: './maps/',      // Subdirectory to save maps to
-        outputFile: 'app.js' // Name to use for bundle
-    },
-};
+
+    var config = {
+        js: {
+            src: './src/js/app.js',       // Entry point
+            outputDir: './dist/js/',  // Directory to save bundle to
+            mapDir: './maps/',      // Subdirectory to save maps to
+            outputFile: 'app.js' // Name to use for bundle
+        },
+    };
+
 function bundle (bundler) {
 
     // Add options to add to "base" bundler passed as parameter
@@ -80,16 +82,16 @@ gulp.task('server', function () {
 });
 
 gulp.task('sass', function(){
-    gulp.src('./src/scss/style.scss')
-        .pipe(sourcemaps.init({ loadMaps: false }))
-        .pipe(sass({
-          includePaths: require('bourbon').includePaths,
-          outputStyle: 'compressed' })
-        .on('error', sass.logError))
-        .on('error', gutil.log)
-        .pipe(autoprefixer('last 2 versions'))
-        //.pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./dist/css/'));
+    return gulp.src('./src/scss/style.scss')
+                .pipe(sourcemaps.init())
+                .pipe(sass({
+                  includePaths: require('bourbon').includePaths,
+                  outputStyle: 'compressed' })
+                .on('error', sass.logError))
+                .on('error', gutil.log)
+                .pipe(autoprefixer('last 2 versions'))
+                .pipe(sourcemaps.write())
+                .pipe(gulp.dest('./dist/css/'));
 
 });
 

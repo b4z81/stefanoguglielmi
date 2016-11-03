@@ -1,12 +1,80 @@
 @import "vendor/normalize";
 @import "partials/component";
 @import "partials/demo";
-
 @import "partials/preview";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'), url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: bold;
+  font-weight: 700;
+  src: local('Montserrat-Bold'), url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icons/icomoon.eot?jmrhnm');
+  src:  url('../fonts/icons/icomoon.eot?jmrhnm#iefix') format('embedded-opentype'),
+    url('../fonts/icons/icomoon.ttf?jmrhnm') format('truetype'),
+    url('../fonts/icons/icomoon.woff?jmrhnm') format('woff'),
+    url('../fonts/icons/icomoon.svg?jmrhnm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-mail:before {
+  content: "\e900";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
+.icon-file-pdf:before {
+  content: "\eadf";
+}
+.icon-codepen:before {
+  content: "\eae8";
+}
+.codrops-links a {
+  margin: 0 5px
+}
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #eee;
+}
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  font-size: 0.6rem;
+  color: #999;
+  padding: 2em 2em 2em 0;
+  text-align: right;
+  z-index: 100000;
 }
 .grid__item.shown {
   filter: grayscale(100%);
@@ -14,6 +82,7 @@ body {
 .grid__item.shown:hover {
   transition: 1s;
   animation: rotate 1.2s 0 1 forwards; 
+  filter: grayscale(0%);
 }
 
 @keyframes rotate {

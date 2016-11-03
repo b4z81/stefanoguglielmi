@@ -10,8 +10,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	-webkit-transform-origin: 50% 100%;
-	transform-origin: 50% 100%;
+	transform-origin: 100% 110%;
 }
 
 .js .grid,
@@ -49,7 +48,7 @@ body {
 }
 
 .grid__title {
-	font-size: 1.2em;
+	font-size: 1.4em;
 	font-weight: bold;
 	position: absolute;
 	z-index: -1;
@@ -109,7 +108,7 @@ body {
 
 /* All individual isometric grid layouts (static and scrollable) */
 .isolayer--scroll1 {
-	width: 70vw;
+	width: 35vw;
 	max-width: 1200px;
 	height: calc(100vh - 280px);
 }

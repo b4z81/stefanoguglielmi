@@ -3,9 +3,6 @@
 .clearfix::after { clear: both; }
 
 body {
-	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color: #141715;
-	background: #D4D2E0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -75,7 +72,7 @@ a:hover, a:focus {
 	text-align: center;
 	white-space: nowrap;
 	pointer-events: auto;
-	margin: 0 0 0 -0.5em;
+	margin: 1em 0;
 }
 
 .codrops-links::after {
