@@ -13,8 +13,8 @@ var browserify = require('browserify'),
     browserSync = require('browser-sync').create(),
     autoprefixer = require("gulp-autoprefixer"),
     uglify = require("gulp-uglify"),
-    sass = require("gulp-sass");
-
+    sass = require("gulp-sass"),
+    imagemin = require("gulp-imagemin");
 var config = {
     js: {
         src: './src/js/app.js',       // Entry point
@@ -56,6 +56,15 @@ gulp.task('scripts', function() {
       .pipe(gulp.dest('dist/js/'))
 });
 
+gulp.task("concat-js", function () {
+    var jsFiles = ['./lib/file3.js', './lib/file1.js', './lib/file2.js'];
+    return gulp.src(jsFiles)
+        .pipe(concat("app.js"))
+        .pipe(uglify())
+        .pipe(gulp.dest("./dist/js"));
+});
+
+
 gulp.task('server', function () {
     browserSync.init({
         injectChanges: true,
@@ -82,6 +91,14 @@ gulp.task('sass', function(){
         //.pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/css/'));
 
+});
+
+gulp.task("image-min", function () {
+  gulp.src('./src/img/**/*.jpg')
+      //.pipe(optipng({ optimizationLevel: 3 })())
+      //.pipe(pngquant({ quality: "65-80", speed: 4 })())
+      .pipe(imagemin())
+      .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task("develop", ["server"]);
