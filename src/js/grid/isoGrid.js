@@ -12,6 +12,14 @@
 
 	'use strict';
 
+	var imagesLoaded = require("imagesloaded");
+	var classie = require("./classie");
+	var Masonry = require("masonry-layout");
+	var AnimOnScroll = require("./animOnScroll");
+	var dynamics = require("dynamics.js");
+
+
+
 	// from: http://stackoverflow.com/a/21913575
 	function getComputedTranslateY(obj) {
 		if(!window.getComputedStyle) return;
@@ -254,5 +262,7 @@
 	};
 
 	window.IsoGrid = IsoGrid;
+
+	module.exports = IsoGrid;
 
 })(window);

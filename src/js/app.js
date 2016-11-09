@@ -1,12 +1,6 @@
-require("browsernizr/test/css/animations");
-var Modernizr  = require("browsernizr");
-
-//var $ = require("jquery");
-require("imagesloaded");
-require("masonry-layout");
-require("dynamics.js");
-require("./grid/animOnScroll");
-require("./grid/classie");
+var dynamics = require("dynamics.js");
+var IsoGrid = require("./grid/isoGrid");
+var classie = require("./grid/classie");
 
 (function() {
 	function getRandomInt(min, max) {

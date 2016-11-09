@@ -26,19 +26,15 @@ var browserify = require('browserify'),
     };
 
 function bundle (bundler) {
-
-    // Add options to add to "base" bundler passed as parameter
-    bundler
-      .bundle()                                                        // Start bundle
-      .pipe(source(config.js.src))                        // Entry point
-      .pipe(buffer())
-      .pipe(uglify())                                         // Convert to gulp pipeline
-      .pipe(rename(config.js.outputFile))          // Rename output from 'main.js'
-                                                                              //   to 'bundle.js'
-      .pipe(sourcemaps.init({ loadMaps : true }))  // Strip inline source maps
-      .pipe(sourcemaps.write(config.js.mapDir))    // Save source maps to their
-                                                                                      //   own directory
-      .pipe(gulp.dest(config.js.outputDir))        // Save 'bundle' to build/                                    // Reload browser if relevant
+  bundler
+    .bundle() 
+    .pipe(source(config.js.src))
+    .pipe(buffer())
+//    .pipe(uglify())                    
+    .pipe(rename(config.js.outputFile))
+    .pipe(sourcemaps.init({ loadMaps : true })) 
+    .pipe(sourcemaps.write(config.js.mapDir))   
+    .pipe(gulp.dest(config.js.outputDir))       
 }
 
 gulp.task('bundle', function () {

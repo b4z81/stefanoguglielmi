@@ -10,9 +10,18 @@
  * Copyright 2016, Codrops
  * http://www.codrops.com
  */
+
 ;(function(window) {
 
 	'use strict';
+	
+	require("browsernizr/test/css/animations");
+	require("browsernizr/lib/prefixed");
+	var Modernizr  = require("browsernizr");
+
+	var classie = require("./classie");
+	var dynamics = require("dynamics.js");
+
 
 	var docElem = window.document.documentElement;
 
@@ -180,7 +189,6 @@
 	}
 
 	window.AnimOnScroll = AnimOnScroll;
-
 
 	module.exports = AnimOnScroll;
 
