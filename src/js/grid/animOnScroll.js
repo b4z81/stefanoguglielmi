@@ -181,4 +181,7 @@
 
 	window.AnimOnScroll = AnimOnScroll;
 
+
+	module.exports = AnimOnScroll;
+
 })(window);

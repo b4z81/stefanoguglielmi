@@ -70,16 +70,6 @@ var classie = {
   toggle: toggleClass
 };
 
-// transport
-if ( typeof define === 'function' && define.amd ) {
-  // AMD
-  define( classie );
-} else if ( typeof exports === 'object' ) {
-  // CommonJS
-  module.exports = classie;
-} else {
-  // browser global
-  window.classie = classie;
-}
+module.exports = classie;
 
 })( window );

@@ -20,9 +20,10 @@ jQuery(document).ready(function($){
 	//close the quick view panel
 	$('body').on('click', function(event){
 		if( $(event.target).is('.cd-close') || $(event.target).is('body.overlay-layer')) {
-			closeQuickView( sliderFinalWidth, maxQuickWidth);
+			closeQuickView(sliderFinalWidth, maxQuickWidth);
 		}
 	});
+
 	$(document).keyup(function(event){
 		//check if user has pressed 'Esc'
     	if(event.which=='27'){
@@ -45,6 +46,7 @@ jQuery(document).ready(function($){
 	function updateSlider(navigation) {
 		var sliderConatiner = navigation.parents('.cd-slider-wrapper').find('.cd-slider'),
 			activeSlider = sliderConatiner.children('.selected').removeClass('selected');
+			
 		if ( navigation.hasClass('cd-next') ) {
 			( !activeSlider.is(':last-child') ) ? activeSlider.next().addClass('selected') : sliderConatiner.children('li').eq(0).addClass('selected');
 		} else {

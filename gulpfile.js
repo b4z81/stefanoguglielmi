@@ -35,11 +35,10 @@ function bundle (bundler) {
       .pipe(uglify())                                         // Convert to gulp pipeline
       .pipe(rename(config.js.outputFile))          // Rename output from 'main.js'
                                                                               //   to 'bundle.js'
-    //  .pipe(sourceMaps.init({ loadMaps : true }))  // Strip inline source maps
-    //  .pipe(sourceMaps.write(config.js.mapDir))    // Save source maps to their
+      .pipe(sourcemaps.init({ loadMaps : true }))  // Strip inline source maps
+      .pipe(sourcemaps.write(config.js.mapDir))    // Save source maps to their
                                                                                       //   own directory
-      .pipe(gulp.dest(config.js.outputDir))        // Save 'bundle' to build/
-      .pipe(livereload());                                       // Reload browser if relevant
+      .pipe(gulp.dest(config.js.outputDir))        // Save 'bundle' to build/                                    // Reload browser if relevant
 }
 
 gulp.task('bundle', function () {
@@ -77,7 +76,7 @@ gulp.task('server', function () {
     });
 
     gulp.watch("src/scss/**/*.scss", ['sass']).on('change', browserSync.reload);
-    gulp.watch("src/js/**/*.js", ['scripts']).on('change', browserSync.reload);
+    gulp.watch("src/js/**/*.js", ['bundle']).on('change', browserSync.reload);
     gulp.watch("dist/**/*.html").on('change', browserSync.reload);
 });
 

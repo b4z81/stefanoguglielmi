@@ -17,8 +17,6 @@
     <title>Stefano Guglielmi</title>
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<script src="js/grid/modernizr.custom.js"></script> <!-- update lib -->
-
 </head>
 <body class="demo-1">
 	<main>
@@ -46,7 +44,7 @@
 					</li>
 					<li class="grid__item">
 						<a class="grid__link cd-trigger" href="#0">
-							<img class="grid__img layer" src="img/webcondominio/thumb.jpg" alt="WebCondominio" />
+							<img class="grid__img layer" src="img/webcondominio/00.jpg" alt="WebCondominio" />
 							<span class="grid__title">WebCondominio</span>
 						</a>
 					</li>
@@ -65,9 +63,9 @@
 		<div class="cd-quick-view">
 			<div class="cd-slider-wrapper">
 				<ul class="cd-slider">
-					<li class="selected"><img src="dist/img/item-1.jpg" alt="Product 1"></li>
-					<li><img src="dist/img/item-2.jpg" alt="Product 2"></li>
-					<li><img src="dist/img/item-3.jpg" alt="Product 3"></li>
+					<li><img src="img/webcondominio/00.jpg" alt="Product 1"></li>
+					<li><img src="img/webcondominio/01.jpg" alt="Product 2"></li>
+					<li><img src="img/webcondominio/01.jpg" alt="Product 2"></li>
 				</ul> <!-- cd-slider -->
 
 				<ul class="cd-slider-navigation">
@@ -88,49 +86,6 @@
 			<a href="#0" class="cd-close">Close</a>
 		</div> <!-- cd-quick-view -->
 
-		<script src="js/grid/imagesloaded.pkgd.min.js"></script>
-		<script src="js/grid/masonry.pkgd.min.js"></script>
-		<script src="js/grid/dynamics.min.js"></script>
-		<script src="js/grid/animOnScroll.js"></script>
-		<script src="js/grid/classie.js"></script>
-		<script src="js/grid/main.js"></script>
-
-		<script src="js/preview/jquery-2.1.1.js"></script>
-		<script src="js/preview/velocity.min.js"></script>
-		<script src="js/preview/main.js"></script> <!-- Resource jQuery -->
-
-		<script>
-		(function() {
-			function getRandomInt(min, max) {
-				return Math.floor(Math.random() * (max - min + 1)) + min;
-			}
-
-			[].slice.call(document.querySelectorAll('.isolayer')).forEach(function(el) {
-				new IsoGrid(el, {
-					type : 'scrollable',
-					transform : 'translateX(-15vw) translateY(275px) rotateX(45deg) rotateZ(45deg)',
-					stackItemsAnimation : {
-						properties : function(pos) {
-							return {
-								translateZ: (pos+1) * 50,
-								rotateZ: getRandomInt(-3, 3)
-							};
-						},
-						options : function(pos, itemstotal) {
-							return {
-								type: dynamics.bezier,
-								duration: 500,
-								points: [{"x":0,"y":0,"cp":[{"x":0.2,"y":1}]},{"x":1,"y":1,"cp":[{"x":0.3,"y":1}]}],
-								//delay: (itemstotal-pos-1)*40
-							};
-						}
-					},
-					onGridLoaded : function() {
-						classie.add(document.body, 'grid-loaded');
-					}
-				});
-			});
-		})();
-		</script>
+		<script src="js/app.js"></script>
 	</body>
 </html>
