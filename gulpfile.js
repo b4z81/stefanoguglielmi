@@ -27,14 +27,14 @@ var browserify = require('browserify'),
 
 function bundle (bundler) {
   bundler
-    .bundle() 
+    .bundle()
     .pipe(source(config.js.src))
     .pipe(buffer())
-//    .pipe(uglify())                    
+//    .pipe(uglify())
     .pipe(rename(config.js.outputFile))
-    .pipe(sourcemaps.init({ loadMaps : true })) 
-    .pipe(sourcemaps.write(config.js.mapDir))   
-    .pipe(gulp.dest(config.js.outputDir))       
+    .pipe(sourcemaps.init({ loadMaps : true }))
+    .pipe(sourcemaps.write(config.js.mapDir))
+    .pipe(gulp.dest(config.js.outputDir))
 }
 
 gulp.task('bundle', function () {
@@ -66,7 +66,8 @@ gulp.task('server', function () {
     browserSync.init({
         injectChanges: true,
         logLevel: "debug",
-        server: "./dist/"
+        server: "./dist/",
+        browser: "google chrome"
 
         /* set the index file */
     });
@@ -98,4 +99,4 @@ gulp.task("image-min", function () {
       .pipe(gulp.dest('./dist/img'));
 });
 
-gulp.task("develop", ["server"]);
+gulp.task("develop", ["sass","bundle","server"]);

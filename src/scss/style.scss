@@ -64,7 +64,11 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #eee;
+  background-image:url('../img/bg.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom left;
 }
 .footer {
   position: fixed;
@@ -81,7 +85,7 @@ body {
 }
 .grid__item.shown:hover {
   transition: 1s;
-  animation: rotate 1.2s 0 1 forwards; 
+  animation: rotate 1.2s 0 1 forwards;
   filter: grayscale(0%);
 }
 

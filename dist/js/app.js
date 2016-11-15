@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Modernizr = require('./lib/Modernizr'),
     ModernizrProto = require('./lib/ModernizrProto'),
     classes = require('./lib/classes'),
@@ -5824,7 +5824,7 @@ var classie = require("./grid/classie");
 	[].slice.call(document.querySelectorAll('.isolayer')).forEach(function(el) {
 		new IsoGrid(el, {
 			type : 'scrollable',
-			transform : 'translateX(-15vw) translateY(275px) rotateX(45deg) rotateZ(45deg)',
+			transform : 'translateX(33vw) translateY(312px) rotateX(68deg) rotateY(-7deg) rotateZ(18deg)',
 			stackItemsAnimation : {
 				properties : function(pos) {
 					return {
@@ -5847,6 +5847,7 @@ var classie = require("./grid/classie");
 		});
 	});
 })();
+
 },{"./grid/classie":42,"./grid/isoGrid":43,"dynamics.js":32}],41:[function(require,module,exports){
 /**
  * "loading" effects for grids from/based on: http://tympanus.net/codrops/2013/07/02/loading-effects-for-grid-items-with-css-animations/ (Check it out for more examples and effects)
@@ -6388,6 +6389,5 @@ module.exports = classie;
 	module.exports = IsoGrid;
 
 })(window);
-},{"./animOnScroll":41,"./classie":42,"dynamics.js":32,"imagesloaded":36,"masonry-layout":37}]},{},[40]);
-
+},{"./animOnScroll":41,"./classie":42,"dynamics.js":32,"imagesloaded":36,"masonry-layout":37}]},{},[40])
 //# sourceMappingURL=maps/app.js.map

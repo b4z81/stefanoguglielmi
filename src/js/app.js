@@ -10,7 +10,7 @@ var classie = require("./grid/classie");
 	[].slice.call(document.querySelectorAll('.isolayer')).forEach(function(el) {
 		new IsoGrid(el, {
 			type : 'scrollable',
-			transform : 'translateX(-15vw) translateY(275px) rotateX(45deg) rotateZ(45deg)',
+			transform : 'translateX(33vw) translateY(312px) rotateX(68deg) rotateY(-7deg) rotateZ(18deg)',
 			stackItemsAnimation : {
 				properties : function(pos) {
 					return {
